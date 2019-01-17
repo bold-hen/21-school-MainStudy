@@ -6,7 +6,7 @@
 #    By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 11:57:00 by bold-hen          #+#    #+#              #
-#    Updated: 2018/11/21 12:33:30 by bold-hen         ###   ########.fr        #
+#    Updated: 2019/01/17 13:54:06 by bold-hen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -24,9 +24,9 @@ $(NAME): $(OBJ)
 	$(GCC) $<
 
 clean:
-	rm *.o
+	rm -f *.o
 
 fclean: clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 15:54:30 by bold-hen          #+#    #+#             */
-/*   Updated: 2018/12/17 16:00:35 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/17 12:18:52 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char *ft_strnew(size_t size)
 {
 	char *string;
 
-	string = (char *)malloc(size_of(char) * size);
+	string = (char *)malloc(sizeof(char) * size);
 	if (string != NULL)
-		ft_bzero(string);
+		ft_bzero(string, size);
 	return (string);
 }

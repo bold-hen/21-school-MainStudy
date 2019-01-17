@@ -6,11 +6,11 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 09:27:54 by bold-hen          #+#    #+#             */
-/*   Updated: 2018/12/12 09:34:39 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/17 12:09:48 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.c"
+#include "libft.h"
 
 char *ft_strcat(char *s1, const char *s2)
 {

@@ -6,13 +6,14 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 14:01:53 by bold-hen          #+#    #+#             */
-/*   Updated: 2019/01/15 13:18:15 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/17 12:14:03 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include <unistd.h>
 
 typedef struct      s_list
 {
@@ -55,7 +56,7 @@ char *ft_strchr(const char *s, int c);
 void ft_strclr(char *s);
 int ft_strcmp(const char *s1, const char *s2);
 char *ft_strcpy(char *dst, const char *src);
-void ft_strdel(void **ap);
+void ft_strdel(char **as);
 char *ft_strdup(const char *s1);
 int ft_strequ(char const *s1, char const *s2);
 void ft_striter(char *s, void (*f)(char *));

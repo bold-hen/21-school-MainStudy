@@ -6,7 +6,7 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 09:01:39 by bold-hen          #+#    #+#             */
-/*   Updated: 2018/12/11 09:11:05 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/17 16:26:09 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
+	unsigned char *result;
+
+	result = (unsigned char *)s;
 	while (n > 0)
 	{
-		if ((unsigned char)*s == (unsigned char)c)
+		if (*result == (unsigned char)c)
 			break;
-		s++;
+		result++;
 		n--;
 	}
 	if (n > 0)
-		return (s);
+		return (result);
 	return (NULL);
 }

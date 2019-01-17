@@ -6,7 +6,7 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 10:05:35 by bold-hen          #+#    #+#             */
-/*   Updated: 2018/12/19 10:09:07 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/17 12:15:05 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *))
 	index = 0;
 	while(*s)
 	{
-		*f(index, s);
+		f(index, s);
 		index++;
 		s++;
 	}

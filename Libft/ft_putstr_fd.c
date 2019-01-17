@@ -6,11 +6,11 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 18:12:26 by bold-hen          #+#    #+#             */
-/*   Updated: 2019/01/15 18:14:23 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/17 12:09:30 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.c"
+#include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {

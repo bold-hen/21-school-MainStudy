@@ -6,7 +6,7 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 11:47:03 by bold-hen          #+#    #+#             */
-/*   Updated: 2018/12/12 11:56:42 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/17 12:27:21 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 char *ft_strrchr(const char *s, int c)
 {
 	size_t len;
-	
-	len = ft_strlen(s);
-	while(ft_strlen(s) > 0)
-		s++;
-	while(len >= 0)
+	char *result;
+
+	result = (char *)s;
+	len = ft_strlen(result);
+	while(ft_strlen(result) > 0)
+		result++;
+	while(len != 0)
 	{
-		if(*s = (char)c)
-			return (s);
-		s--;
+		if(*result == (char)c)
+			return (result);
+		result--;
 		len--;
 	}
 	return (NULL);

@@ -6,7 +6,7 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 15:39:41 by bold-hen          #+#    #+#             */
-/*   Updated: 2018/12/17 15:48:37 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/17 11:40:08 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void *ft_memalloc(size_t size)
 {
 	void *result;
 
-	result = (void *)malloc(size_of(void) * size);
+	result = (void *)malloc(sizeof(void) * size);
 	ft_bzero(result, size);
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 18:31:14 by bold-hen          #+#    #+#             */
-/*   Updated: 2019/01/15 18:34:24 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/17 12:08:26 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char const *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	fr_putchar_fd('\n', fd);
+	ft_putchar_fd('\n', fd);
 }
