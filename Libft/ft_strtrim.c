@@ -19,6 +19,8 @@ static size_t ft_substrlen(char const *s)
     length = 0;
     while(*s == ' ' || *s == '\n' || *s == '\t')
         s++;
+    if (!*s)
+        return (1);
     while(*s)
     {
         length++;
@@ -30,7 +32,7 @@ static size_t ft_substrlen(char const *s)
 		s--;
         length--;
     }
-    return (length + 1);
+    return (length);
 }
 
 char *ft_strtrim(char const *s)
@@ -41,7 +43,7 @@ char *ft_strtrim(char const *s)
 	
 	index = 0;
 	length = ft_substrlen(s);
-	result = (char *)malloc(sizeof(char) * length);
+	result = (char *)malloc(sizeof(char) * (length + 1));
 	if (result == NULL)
 		return (NULL);
 	while(*s == ' ' || *s == '\n' || *s == '\t')
@@ -51,6 +53,7 @@ char *ft_strtrim(char const *s)
 		result[index] = *s;
 		index++;
 		s++;
+		length--;
 	}
 	result[index] = '\0';
 	return (result);

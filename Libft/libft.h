@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _LIBFT_
+#define _LIBFT_
+
 #include <string.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -25,6 +28,7 @@ typedef struct      s_list
 int ft_atoi(const char *str);
 void ft_bzero(void *s, size_t n);
 int	ft_isalpha(int c);
+int	ft_isalnum(int c);
 int ft_isascii(int c);
 int	ft_isdigit(int c);
 int ft_isprint(int c);
@@ -68,9 +72,9 @@ char *ft_strmap(char const *s, char (*f)(char));
 char * ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char *ft_strncat(char *s1, const char *s2, size_t n);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
-char *ft_stpncpy(char *dst, const char *src, size_t len);
+char *ft_strncpy(char *dst, const char *src, size_t len);
 int ft_strnequ(char const *s1, char const *s2, size_t n);
-char * t_strnew(size_t size);
+char * ft_strnew(size_t size);
 char *ft_strnstr(const char *haystack, const char *needle, size_t len);
 char *ft_strrchr(const char *s, int c);
 char **ft_strsplit(char const *s, char c);
@@ -79,3 +83,5 @@ char *ft_strsub(char const *s, unsigned int start, size_t len);
 char *ft_strtrim(char const *s);
 int ft_tolower(int c);
 int ft_toupper(int c);
+
+#endif

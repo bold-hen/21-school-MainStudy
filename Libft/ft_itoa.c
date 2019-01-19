@@ -18,37 +18,32 @@ static int ft_arrlen(int n)
 
 	length = 0;
 	if(n < 0)
-	{
 		length = 1;
-		n = n * -1;
-	}
-    while(n / 10 > 0 || n % 10 > 0)
-	{
-		length++;
-		n = n / 10;
-	}
-	return (length + 1); 
+    while(n / 10 != 0)
+    {
+        length++;
+        n = n / 10;
+    }
+	return (length + 2);
 }
 
 char *ft_itoa(int n)
 {
-	char *result;
+	char *res;
 	int index;
 
 	index = ft_arrlen(n);
-	result = (char *)malloc(sizeof(char) * index);
-	if (result == NULL)
+	res = (char *)malloc(sizeof(char) * index);
+	if (res == NULL)
 		return (NULL);
-	result[--index] = '\0';
+	res[--index] = '\0';
 	if (n < 0)
+		res[0] = '-';
+	while(n / 10 != 0)
 	{
-		result[0] = '-';
-		n = n * -1;
-	}
-	while(n / 10 > 0 || n % 10 > 0)
-	{
-		result[--index] = n % 10 + '0';
+		n < 0 ? res[--index] = -(n % 10) + '0' : (res[--index] = n % 10 + '0');
 		n = n / 10;
 	}
-	return (result);
+    n < 0 ? res[--index] = -n % 10 + '0' : (res[--index] = n % 10 + '0');
+	return (res);
 }
