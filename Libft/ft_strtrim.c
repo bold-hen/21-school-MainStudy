@@ -40,7 +40,9 @@ char *ft_strtrim(char const *s)
 	char *result;
 	size_t length;
 	size_t index;
-	
+
+	if (s == NULL)
+		return (NULL);
 	index = 0;
 	length = ft_substrlen(s);
 	result = (char *)malloc(sizeof(char) * (length + 1));

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t ft_substrcount(char *s, char c)
+static size_t ft_substrcount(char const *s, char c)
 {
 	size_t index;
 	size_t count;
@@ -53,24 +53,23 @@ char **ft_strsplit(char const *s, char c)
 
 	previous = c;
 	i = -1;
-	result = (char **)malloc(sizeof(char *) * ft_substrcount((char *)s, c));
+	if (s == NULL)
+        return (NULL);
+	result = (char **)malloc(sizeof(char *) * ft_substrcount(s, c));
 	if (result == NULL)
 		return (NULL);
 	while (*s)
 	{
 		j = 0;
 		if (previous == c && *s != c)
-		{
-			i++;
-			result[i] = (char *)malloc(sizeof(char) * ft_wordlen((char *)s, c));
-		}
+			result[++i] = (char *)malloc(sizeof(char) * ft_wordlen((char *)s, c));
 		while (*s != c && *s)
 			result[i][j++] = *s++;
 		if (i >= 0 && j != 0)
 			result[i][j] = '\0';
-		s++;
+		if (*s)
+		    s++;
 	}
-	result[i + 1] = (char *)malloc(sizeof(char));
-	result[i + 1][0] = '\0';
+	result[i + 1] = (void *)0;
 	return (result);
 }
