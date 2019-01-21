@@ -1,7 +1,7 @@
 #ifndef _GET_NEXT_LINE_
 #define _GET_NEXT_LINE_
 
-#include "libft/libft.h"
+#include "libft/includes/libft.h"
 
 int get_next_line(const int fd, char **line);
 

@@ -1,31 +1,28 @@
 #include "get_next_line.h"
 
-size_t findindex(char *str)
+char *findindex(char *str)
 {
-    size_t length;
+    char *result;
 
-    length = 0;
-    while (!ft_strchr(str, 3) && !ft_strchr(str, 10))
-    {
-        str++;
-        length++;
-    }
-    return (length);
+    result = ft_strchr(str, '\n');
+    if (result == NULL)
+        return (str);
+    else
+        return (ft_strjoin(++result, ""));
 }
 
 t_list *findlist(t_list *lst, int fd)
 {
-    t_list *flst;
-
-    flst = (t_list *)malloc(sizeof(t_list));
-    while (((t_line *)(lst->content))->fd != fd)
+    if (lst == NULL)
+        return (NULL);
+    while (lst->content_size != (size_t)fd)
     {
         if (lst->next != NULL)
             lst = lst->next;
         else
             break;
     }
-    if (((t_line *)(lst->content))->fd == fd)
+    if (lst->content_size == (size_t)fd)
         return (lst);
     else
         return (NULL);
@@ -36,66 +33,81 @@ void dellist(t_list *lst, int fd)
     t_list *temp;
 
     temp = (t_list *)malloc(sizeof(t_list));
-    while (lst != NULL)
+    while (lst->content_size != (size_t)fd)
     {
-        if (lst->content_size == fd)
-            break;
         temp = lst;
         lst = lst->next;
     }
-    if (lst != NULL)
+    if (temp != NULL)
     {
-        if (temp != NULL)
-        {
-            temp->next = lst->next;
-            ft_lstdelone(&lst, NULL);
-        }
-        else
-            ft_lstdelone(&lst, NULL);
+        temp->next = lst->next;
+        ft_lstdelone(&lst, NULL);
     }
+    else
+        {
+            temp = lst->next;
+            ft_lstdelone(&lst, NULL);
+            lst = temp;
+        }
+    temp = NULL;
+    free(temp);
 }
 
-t_line *newtail(char *str, int fd, size_t lise_size)
+t_list *newlist(char *content, int fd)
 {
-    t_line *tail;
+    t_list *nlst;
 
-    tail = (t_line *)malloc(sizeof(t_line));
-    if (tail == NULL)
+    nlst = (t_list *) malloc(sizeof(t_list));
+    if (nlst == NULL)
         return (NULL);
-    tail->line = malloc(sizeof(char) * lise_size);
-    if (tail->line == NULL)
+    nlst->content = malloc(sizeof(char) * (ft_strlen(content) + 1));
+    if (nlst->content == NULL)
         return (NULL);
-    ft_memcpy(tail->line, str, lise_size);
-    tail->fd = fd;
-    return (tail);
+    ft_memcpy(nlst->content, content, (ft_strlen(content) + 1));
+    nlst->content_size = (size_t) fd;
+    nlst->next = NULL;
+    return (nlst);
 }
 
 int get_next_line(const int fd, char **line)
 {
     static t_list *endings;
     char *buf;
+    long readed;
 
+    *line = ft_strnew(1);
     buf = (char *)malloc(sizeof(char) * BUFF_SIZE);
-    endings = ft_lstnew(newtail("\0", -1, 1), 0);
-    if(!findlist(endings, fd))
+    if (buf == NULL)
+        return (-1);
+    if(findlist(endings, fd) != NULL)
     {
-        ft_memcpy(*line, ((t_line *)findlist(endings, fd)->content)->line, findlist(endings, fd)->content_size);
+        buf = (char *)findlist(endings, fd)->content;
+        readed = ft_strlen(buf);
         dellist(endings, fd);
     }
-    read(fd, buf, BUFF_SIZE);
-    while (!ft_strchr(buf, 3) && !ft_strchr(buf, 10))
+    else
+        readed = read(fd, buf, BUFF_SIZE);
+    while (!ft_strchr(buf, (char)26) && !ft_strchr(buf, '\n'))
     {
-        ft_strjoin(*line, buf);
-        read(fd, buf, BUFF_SIZE);
+        *line = ft_strjoin(*line, buf);
+        readed = read(fd, buf, BUFF_SIZE);
+        if(readed == 0)
+            return (0);
+        if (readed == -1)
+            return (-1);
     }
-    if (!ft_strchr(buf, 3))
+    if ((ft_strchr(buf, '\n') || readed != BUFF_SIZE) && !ft_strchr(buf, (char)26)
     {
-        ft_lstadd(&endings, ft_lstnew(newtail(&buf[findindex(buf)], fd, (BUFF_SIZE - findindex(buf))), (BUFF_SIZE - findindex(buf))));
-        ft_strjoin(*line, ft_strsplit(buf, '\n')[0]);
+        ft_lstadd(&endings, newlist(findindex(buf), fd));
+        if (buf[0] != '\n')
+            *line = ft_strjoin(*line, ft_strsplit(buf, '\n')[0]);
+        else
+            *line = ft_strjoin(*line, "");
+        return (1);
     }
     else
     {
-        ft_strjoin(*line, ft_strsplit(buf, (char)3)[0]);
+        ft_strjoin(*line, ft_strsplit(buf, (char)26)[0]);
+        return (0);
     }
-    return (1);
 }

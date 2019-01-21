@@ -12,6 +12,7 @@
 
 NAME= libft.a
 SCR= *.c
+INC= includes
 GCC= gcc -Wall -Wextra -Werror -c
 OBJ= $(patsubst %.c, %.o, $(wildcard *.c))
 
@@ -21,7 +22,7 @@ $(NAME): $(OBJ)
 	ar rc $@ $^
 
 %.o: %.c
-	$(GCC) $<
+	$(GCC) -I $(INC) $<
 
 clean:
 	rm -f *.o
