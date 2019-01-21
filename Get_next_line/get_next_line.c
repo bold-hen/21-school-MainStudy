@@ -96,7 +96,7 @@ int get_next_line(const int fd, char **line)
         if (readed == -1)
             return (-1);
     }
-    if ((ft_strchr(buf, '\n') || readed != BUFF_SIZE) && !ft_strchr(buf, (char)26)
+    if ((ft_strchr(buf, '\n') || readed != BUFF_SIZE) && !ft_strchr(buf, (char)26))
     {
         ft_lstadd(&endings, newlist(findindex(buf), fd));
         if (buf[0] != '\n')
