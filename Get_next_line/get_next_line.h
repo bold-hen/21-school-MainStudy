@@ -1,16 +1,28 @@
-#ifndef _GET_NEXT_LINE_
-#define _GET_NEXT_LINE_
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/22 12:50:31 by bold-hen          #+#    #+#             */
+/*   Updated: 2019/01/22 12:51:45 by bold-hen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "libft/includes/libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int get_next_line(const int fd, char **line);
+# include "libft/includes/libft.h"
 
-typedef struct  s_line
+int				get_next_line(const int fd, char **line);
+
+typedef struct	s_line
 {
-    int         fd;
-    char        *line;
-}               t_line;
+	int			fd;
+	char		*line;
+}				t_line;
 
-#define BUFF_SIZE 32
+# define BUFF_SIZE 32
 
 #endif

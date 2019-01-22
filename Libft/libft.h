@@ -6,7 +6,7 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 14:01:53 by bold-hen          #+#    #+#             */
-/*   Updated: 2019/01/22 11:11:14 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/22 14:40:18 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <string.h>
 # include <stdlib.h>
-# include <fcntl.h>
 # include <unistd.h>
 
 typedef struct		s_list
