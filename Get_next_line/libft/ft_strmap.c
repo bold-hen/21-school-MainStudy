@@ -6,16 +6,16 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 10:09:57 by bold-hen          #+#    #+#             */
-/*   Updated: 2019/01/17 12:15:21 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/22 11:44:49 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char *result;
-	size_t index;
+	char	*result;
+	size_t	index;
 
 	if (s == NULL)
 		return (NULL);
@@ -23,7 +23,7 @@ char *ft_strmap(char const *s, char (*f)(char))
 	result = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (result == NULL)
 		return (NULL);
-	while(*s)
+	while (*s)
 	{
 		if (f != NULL)
 			result[index] = f(*s);

@@ -6,17 +6,17 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 16:11:55 by bold-hen          #+#    #+#             */
-/*   Updated: 2018/12/17 16:12:50 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/22 11:48:55 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_strclr(char *s)
+void	ft_strclr(char *s)
 {
 	if (s != NULL)
 	{
-		while(*s)
+		while (*s)
 		{
 			*s = '\0';
 			s++;
