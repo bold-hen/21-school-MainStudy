@@ -6,16 +6,16 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 10:50:05 by bold-hen          #+#    #+#             */
-/*   Updated: 2018/12/19 10:55:25 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/22 11:42:40 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *result;
-	size_t index;
+	char	*result;
+	size_t	index;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
