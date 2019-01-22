@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_v2.h"
 
 t_list	*findlist(t_list *lst, int fd)
 {
@@ -34,24 +34,27 @@ void	dellist(t_list *lst, int fd)
 	t_list *temp;
 
 	temp = (t_list *)malloc(sizeof(t_list));
-	while (lst->content_size != (size_t)fd)
-	{
-		temp = lst;
-		lst = lst->next;
-	}
 	if (temp != NULL)
 	{
-		temp->next = lst->next;
-		ft_lstdelone(&lst, NULL);
+		while (lst->content_size != (size_t)fd)
+		{
+			temp = lst;
+			lst = lst->next;
+		}
+		if (temp != NULL)
+		{
+			temp->next = lst->next;
+			ft_lstdelone(&lst, NULL);
+		}
+		else
+		{
+			temp = lst->next;
+			ft_lstdelone(&lst, NULL);
+			lst = temp;
+		}
+		temp = NULL;
+		free(temp);
 	}
-	else
-	{
-		temp = lst->next;
-		ft_lstdelone(&lst, NULL);
-		lst = temp;
-	}
-	temp = NULL;
-	free(temp);
 }
 
 t_list	*newlist(char *content, int fd)
@@ -100,8 +103,6 @@ int		readline(char *buf, char **line, int fd, t_list **endings)
 			*line = ft_strjoin(*line, "");
 		return (1);
 	}
-	else
-		ft_strjoin(*line, ft_strsplit(buf, -1)[0]);
 	return (0);
 }
 
@@ -121,6 +122,7 @@ int		get_next_line(const int fd, char **line)
 	{
 		buf = (char *)findlist(endings, fd)->content;
 		rd = ft_strlen(buf);
+		buf[rd] = '\0';
 		dellist(endings, fd);
 	}
 	else
