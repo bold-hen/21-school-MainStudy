@@ -31,27 +31,24 @@ t_list	*findlist(t_list *lst, int fd)
 
 void	dellist(t_list *lst, int fd)
 {
-	t_list *temp;
+	t_list *previous;
+	t_list *find;
 
-	temp = (t_list *)malloc(sizeof(t_list));
-	while (lst->content_size != (size_t)fd)
+	find = lst;
+	previous = NULL;
+	while (find->content_size != (size_t)fd && find->next != NULL)
 	{
-		temp = lst;
-		lst = lst->next;
+		previous = find;
+		find = lst->next;
 	}
-	if (temp != NULL)
+	if (find->content_size == (size_t)fd)
 	{
-		temp->next = lst->next;
-		ft_lstdelone(&lst, NULL);
+		if (previous != NULL)
+			previous->next = find->next;
+		ft_lstdelone(&find, NULL);
 	}
-	else
-	{
-		temp = lst->next;
-		ft_lstdelone(&lst, NULL);
-		lst = temp;
-	}
-	temp = NULL;
-	free(temp);
+	free(find);
+	free(previous);
 }
 
 t_list	*newlist(char *content, int fd)
@@ -85,24 +82,24 @@ int		readline(char *buf, char **line, int fd, t_list **endings)
 	rd = ft_strlen(buf);
 	while (!ft_strchr(buf, '\n') && rd != 0)
 	{
-		buf[rd] = '\0';
 		*line = ft_strjoin(*line, buf);
 		rd = read(fd, buf, BUFF_SIZE);
 		if (rd == -1)
 			return (-1);
+		buf[rd] = '\0';
 	}
-	if (ft_strchr(buf, '\n') && rd != 0)
+	if (rd != 0)
 	{
 		ft_lstadd(endings, newlist(ft_strchr(buf, '\n'), fd));
 		if (buf[0] != '\n')
 			*line = ft_strjoin(*line, ft_strsplit(buf, '\n')[0]);
 		else
 			*line = ft_strjoin(*line, "");
+		free(buf);
 		return (1);
 	}
 	else
-		ft_strjoin(*line, ft_strsplit(buf, -1)[0]);
-	return (0);
+		return (0);
 }
 
 int		get_next_line(const int fd, char **line)
@@ -114,13 +111,14 @@ int		get_next_line(const int fd, char **line)
 	if (fd < 0)
 		return (-1);
 	*line = ft_strnew(1);
-	buf = (char *)malloc(sizeof(char) * BUFF_SIZE);
+	buf = (char *)malloc(sizeof(char) * (BUFF_SIZE + 1));
 	if (buf == NULL)
 		return (-1);
 	if (findlist(endings, fd) != NULL)
 	{
 		buf = (char *)findlist(endings, fd)->content;
 		rd = ft_strlen(buf);
+		buf[rd] = '\0';
 		dellist(endings, fd);
 	}
 	else
