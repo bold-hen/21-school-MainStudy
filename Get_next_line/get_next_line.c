@@ -1,16 +1,5 @@
 #include "get_next_line.h"
 
-char *findindex(char *str)
-{
-    char *result;
-
-    result = ft_strchr(str, '\n');
-    if (result == NULL)
-        return (str);
-    else
-        return (ft_strjoin(++result, ""));
-}
-
 t_list *findlist(t_list *lst, int fd)
 {
     if (lst == NULL)
@@ -63,9 +52,17 @@ t_list *newlist(char *content, int fd)
     nlst->content = malloc(sizeof(char) * (ft_strlen(content) + 1));
     if (nlst->content == NULL)
         return (NULL);
-    ft_memcpy(nlst->content, content, (ft_strlen(content) + 1));
+    if (content[0] == '\n')
+    {
+        content++;
+        ft_memcpy(nlst->content, content, (ft_strlen(content) + 1));
+    }
+    else
+        ft_memcpy(nlst->content, content, (ft_strlen(content) + 1));
     nlst->content_size = (size_t) fd;
     nlst->next = NULL;
+    content = NULL;
+    free(content);
     return (nlst);
 }
 
@@ -86,9 +83,13 @@ int get_next_line(const int fd, char **line)
         dellist(endings, fd);
     }
     else
+    {
         readed = read(fd, buf, BUFF_SIZE);
+        buf[BUFF_SIZE] = '\0';
+    }
     while (!ft_strchr(buf, (char)26) && !ft_strchr(buf, '\n'))
     {
+        buf[BUFF_SIZE] = '\0';
         *line = ft_strjoin(*line, buf);
         readed = read(fd, buf, BUFF_SIZE);
         if(readed == 0)
@@ -98,7 +99,7 @@ int get_next_line(const int fd, char **line)
     }
     if ((ft_strchr(buf, '\n') || readed != BUFF_SIZE) && !ft_strchr(buf, (char)26))
     {
-        ft_lstadd(&endings, newlist(findindex(buf), fd));
+        ft_lstadd(&endings, newlist(ft_strchr(buf, '\n'), fd));
         if (buf[0] != '\n')
             *line = ft_strjoin(*line, ft_strsplit(buf, '\n')[0]);
         else
