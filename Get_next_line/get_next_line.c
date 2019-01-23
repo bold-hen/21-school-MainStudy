@@ -61,7 +61,7 @@ static int remove_tail(t_list **tails, int fd)
     }
     while ((*tails)->next != NULL)
     {
-        if (tail->next->content_size == (size_t)fd)
+        if ((*tails)->next->content_size == (size_t)fd)
         {
             tail = (*tails)->next;
             (*tails)->next = (*tails)->next->next;
@@ -110,6 +110,8 @@ int get_next_line(const int fd, char **str)
     if (buf == NULL)
         return (-1);
     buf[0] = '\0';
+    if (str == NULL)
+        return (-1);
     *str = ft_strnew(1);
     if (tail_exist(tails, fd))
     {
