@@ -4,9 +4,6 @@ static t_list *tail_exist(t_list *tails, int fd)
 {
     t_list *tail;
 
-    tail = (t_list *)malloc(sizeof(t_list));
-    if (tail == NULL)
-        return (NULL);
     if (tails == NULL)
         return (NULL);
     tail = tails;
@@ -70,16 +67,20 @@ static int remove_tail(t_list **tails, int fd)
         }
         tails = &(*tails)->next;
     }
-   return (0);
+    free (tail);
+    return (0);
 }
 
 static int read_line(t_list **tails, int fd, char **str, char *buf)
 {
     long rd;
+    char *todel;
 
     while (!strchr(buf, '\n'))
     {
+        todel = *str;
         *str = ft_strjoin(*str, buf);
+        free(todel);
         rd = read(fd, buf, BUFF_SIZE);
         if (rd == -1)
             return (-1);
@@ -92,10 +93,12 @@ static int read_line(t_list **tails, int fd, char **str, char *buf)
     }
     if (!add_tail(tails, fd, ft_strchr(buf, '\n')))
         return (-1);
+    todel = *str;
     if (buf[0] != '\n')
         *str = ft_strjoin(*str, ft_strsplit(buf, '\n')[0]);
     else
         *str = ft_strjoin(*str, "");
+    free(todel);
     return (1);
 }
 
@@ -103,6 +106,7 @@ int get_next_line(const int fd, char **str)
 {
     static t_list *tails;
     char *buf;
+    int read_result;
 
     if (fd < 0)
         return (-1);
@@ -111,13 +115,21 @@ int get_next_line(const int fd, char **str)
         return (-1);
     buf[0] = '\0';
     if (str == NULL)
+    {
+        free(buf);
         return (-1);
+    }
     *str = ft_strnew(1);
     if (tail_exist(tails, fd))
     {
         buf = tail_exist(tails, fd)->content;
         if (remove_tail(&tails, fd) == 0)
+        {
+            free(buf);
             return (-1);
+        }
     }
-    return (read_line(&tails, fd, str, buf));
+    read_result = read_line(&tails, fd, str, buf);
+    free(buf);
+    return (read_result);
 }
