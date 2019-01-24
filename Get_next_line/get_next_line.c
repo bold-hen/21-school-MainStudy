@@ -110,15 +110,12 @@ int get_next_line(const int fd, char **str)
 
     if (fd < 0)
         return (-1);
+    if (str == NULL)
+        return (-1);
     buf = (char *)malloc(sizeof(char) * (BUFF_SIZE + 1));
     if (buf == NULL)
         return (-1);
     buf[0] = '\0';
-    if (str == NULL)
-    {
-        free(buf);
-        return (-1);
-    }
     *str = ft_strnew(1);
     if (tail_exist(tails, fd))
     {
