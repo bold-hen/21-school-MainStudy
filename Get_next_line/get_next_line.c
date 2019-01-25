@@ -6,36 +6,26 @@
 /*   By: bold-hen <bold-hen@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/25 11:03:01 by bold-hen          #+#    #+#             */
-/*   Updated: 2019/01/25 12:08:01 by bold-hen         ###   ########.fr       */
+/*   Updated: 2019/01/25 13:33:24 by bold-hen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*tail_exist(t_list *tails, int fd)
+static int	tail_exist(t_list *tails, int fd, char **buf)
 {
-	t_list	*tail;
-	char	*content;
-
 	if (tails == NULL)
-		return (NULL);
-	tail = (t_list *)malloc(sizeof(t_list));
-	if (tail == NULL)
-		return (NULL);
-	tail = tails;
-	while (tail != NULL)
+		return (0);
+	while (tails != NULL)
 	{
-		if (tail->content_size == (size_t)fd)
+		if ((tails)->content_size == (size_t)fd)
 		{
-			content = tail->content;
-			tail = NULL;
-			free(tail);
-			return (content);
+			ft_memcpy(*buf, (tails)->content, ft_strlen((tails)->content));
+			return (1);
 		}
-		tail = tail->next;
+		(tails) = (tails)->next;
 	}
-	free(tail);
-	return (NULL);
+	return (0);
 }
 
 static int	add_tail(t_list **tails, int fd, char *content)
@@ -46,17 +36,14 @@ static int	add_tail(t_list **tails, int fd, char *content)
 	if (tail == NULL)
 		return (0);
 	tail->content_size = (size_t)fd;
-	tail->content = (char *)malloc(sizeof(char) * (ft_strlen(content) + 1));
+	tail->content = (char *)malloc(sizeof(char) * ft_strlen(content));
 	if (tail->content == NULL)
 	{
 		free(tail);
 		return (0);
 	}
-	else
-	{
-		content++;
-		ft_memcpy(tail->content, content, (ft_strlen(content) + 1));
-	}
+	content++;
+	ft_memmove(tail->content, content, ft_strlen(content) + 1);
 	if (*tails == NULL)
 		*tails = tail;
 	else
@@ -70,13 +57,11 @@ static int	remove_tail(t_list **tails, int fd)
 {
 	t_list *tail;
 
-	tail = (t_list *)malloc(sizeof(t_list));
-	if (tail == NULL)
-		return (0);
 	if ((*tails)->content_size == (size_t)fd)
 	{
 		tail = *tails;
 		*tails = (*tails)->next;
+		free(tail->content);
 		free(tail);
 		return (1);
 	}
@@ -86,12 +71,12 @@ static int	remove_tail(t_list **tails, int fd)
 		{
 			tail = (*tails)->next;
 			(*tails)->next = (*tails)->next->next;
+			free(tail->content);
 			free(tail);
 			return (1);
 		}
 		tails = &(*tails)->next;
 	}
-	free(tail);
 	return (0);
 }
 
@@ -138,9 +123,8 @@ int			get_next_line(const int fd, char **str)
 	buf = ft_strnew(BUFF_SIZE + 1);
 	if (buf == NULL)
 		return (-1);
-	if (tail_exist(tails, fd))
+	if (tail_exist(tails, fd, &buf))
 	{
-		ft_memcpy(buf, tail_exist(tails, fd), BUFF_SIZE);
 		if (remove_tail(&tails, fd) == 0)
 		{
 			free(buf);
