@@ -1,18 +1,56 @@
 #include "Fillit.h"
 
-int solve(char *args)//args - список полученных фигурок в порядке получения из файла, конец полученных фигурок '\0'
+int find_position(char **field, char tetremin, int number)//поиск позиции для текущей фигуры на текущем поле
 {
 
+
+    return (0);
+}
+
+int initiate_field(char ***field, char *args)// +
+{
+    int i;
+
+    i = 0;
+    *field = (char **)malloc(sizeof(char *) * (ft_strlen(args) + 1));
+    if (*field == NULL)
+        return (0);
+    (*field)[ft_strlen(args)] = NULL;
+    while ((*field)[i])
+    {
+        (*field)[i] = (char *)malloc(sizeof(char) * 11);
+        if ((*field)[i] == NULL)
+            return (0);
+        i++;
+    }
     return (1);
+}
+
+int rebuild_field(char ***field)
+{
+
+}
+
+int solve(char *args, char **field, int number)//args - список полученных фигурок в порядке получения из файла, конец полученных фигурок '\0'. Возвращаемые значения: 1 - решение найдено 0 - изменить размеры поля
+{
+    if (args[number] == '\0')
+        return (1);
+    if (find_position(field, args[number], number))
+    {
+        while(!solve(args, field, number + 1))
+            rebuild_field(&field);
+        return (1);
+    }
+
 }
 
 int validate_input(char *buf, char **args)//через ft_strrealloc меняем ссылку на новый список фигурок;
 {
 
-    return (1);
+    return (0);
 }
 
-int put_error(char **args_free, char *to_free, int to_close)
+int put_error(char **args_free, char *to_free, int to_close)// +
 {
     ft_putstr("error\n");
     if (args_free != NULL)
@@ -24,7 +62,7 @@ int put_error(char **args_free, char *to_free, int to_close)
     return (0);
 }
 
-int read_input(char *file_path, char **args)
+int read_input(char *file_path, char **args)// +
 {
     char *buf;
     int fd;
@@ -52,7 +90,7 @@ int read_input(char *file_path, char **args)
     }
 }
 
-char *ft_strrealloc(char *str, size_t size)
+char *ft_strrealloc(char *str, size_t size) // +
 {
     char *result;
 
@@ -64,20 +102,39 @@ char *ft_strrealloc(char *str, size_t size)
     return (result);
 }
 
-int main(int argc, char **argv)
+void print_result(char **field)// +
 {
-    char **args;
+    int i;
 
-    args = (char **)malloc(sizeof(char *));
+    i = 0;
+    while (field[i])
+    {
+        ft_putstr(field[i]);
+        i++;
+    }
+}
+
+int main(int argc, char **argv)// +
+{
+    char *args;
+    char **field;
+
+    args = (char *)malloc(sizeof(char));
     if (args == NULL)
         return (put_error(NULL, NULL, 0));
     if (argc == 2)
     {
-        *args = ft_strnew(1);
-        if (*args == NULL)
+        args = ft_strnew(1);
+        if (args == NULL)
             return (put_error(NULL, NULL, 0));
-        if (read_input(argv[1], args))
-            return (solve(*args));
+        if (read_input(argv[1], &args))
+        {
+            if (initiate_field(&field, args) == 0)
+                return (put_error(&args, NULL, 0));
+            solve(args, field, 0);
+            print_result(field);
+            return (0);
+        }
         else
             return (0);
     }
