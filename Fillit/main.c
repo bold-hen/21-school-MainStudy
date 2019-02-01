@@ -46,7 +46,7 @@ int try_insert(char ***field, t_list *tetrimin, t_point *check)
     {
         check->y = start->y + ((t_figure *)tetrimin->content)->y[i] - ((t_figure *)tetrimin->content)->y[0];
         check->x = start->x + ((t_figure *)tetrimin->content)->x[i] - ((t_figure *)tetrimin->content)->x[0];
-        if (check->y < 0 || check->x < 0)
+        if (check->y < 0 || check->x < 0 || check->y == ft_strlen(**field) || check->x == ft_strlen(**field))
             return (0);
         if ((*field)[check->y][check->x] != '.')
             return (0);
@@ -195,7 +195,7 @@ int solve(t_list *args, char ***field, t_point *point)
     while (result == 0)
     {
         find_position(field, args, &point);
-        if (point == NULL)//проблема с перестроением поля
+        if (point == NULL)
         {
             if (!rebuild_field(field))
                 return (-1);
@@ -413,7 +413,7 @@ int main(int argc, char **argv)
      //   return (put_error(NULL, NULL, 0));
     //if (argc == 2)
     {
-        if (read_input("/Users/bold-hen/MyGit/Fillit/tests/test_3.txt", &args))
+        if (read_input("/Users/bold-hen/MyGit/Fillit/tests/test_4.txt", &args))
         {
             if (initialize_field(&field) == 0)
                 return (put_error(&args, NULL, 0));
