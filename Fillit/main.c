@@ -63,7 +63,8 @@ void get_next_point(char **field, t_point **previous)
         (*previous)->x = 0;
         if (field[(*previous)->y + 1] == NULL)
             *previous = NULL;
-        (*previous)->y = (*previous)->y + 1;
+        else
+            (*previous)->y = (*previous)->y + 1;
     }
     else
         (*previous)->x = (*previous)->x + 1;
@@ -170,13 +171,14 @@ int solve(t_list *args, char ***field, t_point *point)
     while (result == 0)
     {
         find_position(field, args, &point);
-        if (point == NULL)
+        if (point == NULL)//проблема с перестроением поля
         {
             if (!rebuild_field(field))
                 return (-1);
             return (solve(args, field, start_point()));
         }
-        result = solve(args->next, field, point);
+        else
+            result = solve(args->next, field, point);
     }
     if (result == 1)
         return (1);
