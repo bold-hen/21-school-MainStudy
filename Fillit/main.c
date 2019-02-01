@@ -160,7 +160,7 @@ int rebuild_field(char ***field)
     return (1);
 }
 
-int solve(t_list **args, char ***field, t_point *point)
+int solve(t_list *args, char ***field, t_point *point)
 {
     int result;
 
@@ -169,14 +169,14 @@ int solve(t_list **args, char ***field, t_point *point)
     result = 0;
     while (result == 0)
     {
-        find_position(field, *args, &point);
+        find_position(field, args, &point);
         if (point == NULL)
         {
             if (!rebuild_field(field))
                 return (-1);
             return (solve(args, field, start_point()));
         }
-        result = solve((*args)->next, field, point);
+        result = solve(args->next, field, point);
     }
     if (result == 1)
         return (1);
@@ -391,7 +391,7 @@ int main(int argc, char **argv)
         {
             if (initialize_field(&field) == 0)
                 return (put_error(&args, NULL, 0));
-            if (solve(&args, &field, start_point()))
+            if (solve(args, &field, start_point()))
                 print_result(field);
             else
             {

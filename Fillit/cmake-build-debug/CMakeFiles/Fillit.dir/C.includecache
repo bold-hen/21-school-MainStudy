@@ -6,11 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/bold-hen/MyGit/Fillit/libft/ft_putchar.c
-includes/libft.h
-/Users/bold-hen/MyGit/Fillit/libft/includes/libft.h
-
-/Users/bold-hen/MyGit/Fillit/libft/includes/libft.h
+/Users/bold-hen/MyGit/Fillit/./libft/includes/libft.h
 string.h
 -
 stdlib.h
@@ -19,4 +15,12 @@ fcntl.h
 -
 unistd.h
 -
+
+/Users/bold-hen/MyGit/Fillit/Fillit.h
+./libft/includes/libft.h
+/Users/bold-hen/MyGit/Fillit/./libft/includes/libft.h
+
+/Users/bold-hen/MyGit/Fillit/main.c
+Fillit.h
+/Users/bold-hen/MyGit/Fillit/Fillit.h
 
