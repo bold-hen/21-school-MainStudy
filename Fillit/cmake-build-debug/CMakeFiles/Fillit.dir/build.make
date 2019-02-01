@@ -148,6 +148,97 @@ CMakeFiles/Fillit.dir/libft/ft_memmove.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Fillit.dir/libft/ft_memmove.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/MyGit/Fillit/libft/ft_memmove.c -o CMakeFiles/Fillit.dir/libft/ft_memmove.c.s
 
+CMakeFiles/Fillit.dir/libft/ft_lstdel.c.o: CMakeFiles/Fillit.dir/flags.make
+CMakeFiles/Fillit.dir/libft/ft_lstdel.c.o: ../libft/ft_lstdel.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bold-hen/MyGit/Fillit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Fillit.dir/libft/ft_lstdel.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Fillit.dir/libft/ft_lstdel.c.o   -c /Users/bold-hen/MyGit/Fillit/libft/ft_lstdel.c
+
+CMakeFiles/Fillit.dir/libft/ft_lstdel.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Fillit.dir/libft/ft_lstdel.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bold-hen/MyGit/Fillit/libft/ft_lstdel.c > CMakeFiles/Fillit.dir/libft/ft_lstdel.c.i
+
+CMakeFiles/Fillit.dir/libft/ft_lstdel.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Fillit.dir/libft/ft_lstdel.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/MyGit/Fillit/libft/ft_lstdel.c -o CMakeFiles/Fillit.dir/libft/ft_lstdel.c.s
+
+CMakeFiles/Fillit.dir/libft/ft_lstnew.c.o: CMakeFiles/Fillit.dir/flags.make
+CMakeFiles/Fillit.dir/libft/ft_lstnew.c.o: ../libft/ft_lstnew.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bold-hen/MyGit/Fillit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Fillit.dir/libft/ft_lstnew.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Fillit.dir/libft/ft_lstnew.c.o   -c /Users/bold-hen/MyGit/Fillit/libft/ft_lstnew.c
+
+CMakeFiles/Fillit.dir/libft/ft_lstnew.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Fillit.dir/libft/ft_lstnew.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bold-hen/MyGit/Fillit/libft/ft_lstnew.c > CMakeFiles/Fillit.dir/libft/ft_lstnew.c.i
+
+CMakeFiles/Fillit.dir/libft/ft_lstnew.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Fillit.dir/libft/ft_lstnew.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/MyGit/Fillit/libft/ft_lstnew.c -o CMakeFiles/Fillit.dir/libft/ft_lstnew.c.s
+
+CMakeFiles/Fillit.dir/libft/ft_strlen.c.o: CMakeFiles/Fillit.dir/flags.make
+CMakeFiles/Fillit.dir/libft/ft_strlen.c.o: ../libft/ft_strlen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bold-hen/MyGit/Fillit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Fillit.dir/libft/ft_strlen.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Fillit.dir/libft/ft_strlen.c.o   -c /Users/bold-hen/MyGit/Fillit/libft/ft_strlen.c
+
+CMakeFiles/Fillit.dir/libft/ft_strlen.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Fillit.dir/libft/ft_strlen.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bold-hen/MyGit/Fillit/libft/ft_strlen.c > CMakeFiles/Fillit.dir/libft/ft_strlen.c.i
+
+CMakeFiles/Fillit.dir/libft/ft_strlen.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Fillit.dir/libft/ft_strlen.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/MyGit/Fillit/libft/ft_strlen.c -o CMakeFiles/Fillit.dir/libft/ft_strlen.c.s
+
+CMakeFiles/Fillit.dir/libft/ft_strsplit.c.o: CMakeFiles/Fillit.dir/flags.make
+CMakeFiles/Fillit.dir/libft/ft_strsplit.c.o: ../libft/ft_strsplit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bold-hen/MyGit/Fillit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Fillit.dir/libft/ft_strsplit.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Fillit.dir/libft/ft_strsplit.c.o   -c /Users/bold-hen/MyGit/Fillit/libft/ft_strsplit.c
+
+CMakeFiles/Fillit.dir/libft/ft_strsplit.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Fillit.dir/libft/ft_strsplit.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bold-hen/MyGit/Fillit/libft/ft_strsplit.c > CMakeFiles/Fillit.dir/libft/ft_strsplit.c.i
+
+CMakeFiles/Fillit.dir/libft/ft_strsplit.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Fillit.dir/libft/ft_strsplit.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/MyGit/Fillit/libft/ft_strsplit.c -o CMakeFiles/Fillit.dir/libft/ft_strsplit.c.s
+
+CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.o: CMakeFiles/Fillit.dir/flags.make
+CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.o: ../libft/ft_lstdelone.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bold-hen/MyGit/Fillit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.o   -c /Users/bold-hen/MyGit/Fillit/libft/ft_lstdelone.c
+
+CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bold-hen/MyGit/Fillit/libft/ft_lstdelone.c > CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.i
+
+CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/MyGit/Fillit/libft/ft_lstdelone.c -o CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.s
+
+CMakeFiles/Fillit.dir/libft/ft_memcpy.c.o: CMakeFiles/Fillit.dir/flags.make
+CMakeFiles/Fillit.dir/libft/ft_memcpy.c.o: ../libft/ft_memcpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bold-hen/MyGit/Fillit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Fillit.dir/libft/ft_memcpy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Fillit.dir/libft/ft_memcpy.c.o   -c /Users/bold-hen/MyGit/Fillit/libft/ft_memcpy.c
+
+CMakeFiles/Fillit.dir/libft/ft_memcpy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Fillit.dir/libft/ft_memcpy.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bold-hen/MyGit/Fillit/libft/ft_memcpy.c > CMakeFiles/Fillit.dir/libft/ft_memcpy.c.i
+
+CMakeFiles/Fillit.dir/libft/ft_memcpy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Fillit.dir/libft/ft_memcpy.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/MyGit/Fillit/libft/ft_memcpy.c -o CMakeFiles/Fillit.dir/libft/ft_memcpy.c.s
+
+CMakeFiles/Fillit.dir/libft/ft_putchar.c.o: CMakeFiles/Fillit.dir/flags.make
+CMakeFiles/Fillit.dir/libft/ft_putchar.c.o: ../libft/ft_putchar.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bold-hen/MyGit/Fillit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Fillit.dir/libft/ft_putchar.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Fillit.dir/libft/ft_putchar.c.o   -c /Users/bold-hen/MyGit/Fillit/libft/ft_putchar.c
+
+CMakeFiles/Fillit.dir/libft/ft_putchar.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Fillit.dir/libft/ft_putchar.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bold-hen/MyGit/Fillit/libft/ft_putchar.c > CMakeFiles/Fillit.dir/libft/ft_putchar.c.i
+
+CMakeFiles/Fillit.dir/libft/ft_putchar.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Fillit.dir/libft/ft_putchar.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/MyGit/Fillit/libft/ft_putchar.c -o CMakeFiles/Fillit.dir/libft/ft_putchar.c.s
+
 # Object files for target Fillit
 Fillit_OBJECTS = \
 "CMakeFiles/Fillit.dir/main.c.o" \
@@ -156,7 +247,14 @@ Fillit_OBJECTS = \
 "CMakeFiles/Fillit.dir/libft/ft_putchar_fd.c.o" \
 "CMakeFiles/Fillit.dir/libft/ft_strnew.c.o" \
 "CMakeFiles/Fillit.dir/libft/ft_bzero.c.o" \
-"CMakeFiles/Fillit.dir/libft/ft_memmove.c.o"
+"CMakeFiles/Fillit.dir/libft/ft_memmove.c.o" \
+"CMakeFiles/Fillit.dir/libft/ft_lstdel.c.o" \
+"CMakeFiles/Fillit.dir/libft/ft_lstnew.c.o" \
+"CMakeFiles/Fillit.dir/libft/ft_strlen.c.o" \
+"CMakeFiles/Fillit.dir/libft/ft_strsplit.c.o" \
+"CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.o" \
+"CMakeFiles/Fillit.dir/libft/ft_memcpy.c.o" \
+"CMakeFiles/Fillit.dir/libft/ft_putchar.c.o"
 
 # External object files for target Fillit
 Fillit_EXTERNAL_OBJECTS =
@@ -168,9 +266,16 @@ Fillit: CMakeFiles/Fillit.dir/libft/ft_putchar_fd.c.o
 Fillit: CMakeFiles/Fillit.dir/libft/ft_strnew.c.o
 Fillit: CMakeFiles/Fillit.dir/libft/ft_bzero.c.o
 Fillit: CMakeFiles/Fillit.dir/libft/ft_memmove.c.o
+Fillit: CMakeFiles/Fillit.dir/libft/ft_lstdel.c.o
+Fillit: CMakeFiles/Fillit.dir/libft/ft_lstnew.c.o
+Fillit: CMakeFiles/Fillit.dir/libft/ft_strlen.c.o
+Fillit: CMakeFiles/Fillit.dir/libft/ft_strsplit.c.o
+Fillit: CMakeFiles/Fillit.dir/libft/ft_lstdelone.c.o
+Fillit: CMakeFiles/Fillit.dir/libft/ft_memcpy.c.o
+Fillit: CMakeFiles/Fillit.dir/libft/ft_putchar.c.o
 Fillit: CMakeFiles/Fillit.dir/build.make
 Fillit: CMakeFiles/Fillit.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bold-hen/MyGit/Fillit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable Fillit"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bold-hen/MyGit/Fillit/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking C executable Fillit"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Fillit.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

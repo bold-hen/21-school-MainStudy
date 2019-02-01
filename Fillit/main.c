@@ -12,14 +12,82 @@ t_point *start_point()
     return (result);
 }
 
-t_point *find_position(char **field, t_list *tetremin, t_point *point)//возвращает следующую точку после той куда смогли поставить
+void clear_previous_position(char tetrimin, char **field)
 {
-    while (field)
+    int x;
+    int y;
+
+    y = 0;
+    while(field[y] != NULL)
     {
-
-        (*field)++;
+        x = 0;
+        while (field[y][x])
+        {
+            if (field[y][x] == tetrimin)
+                field[y][x] = '.';
+            x++;
+        }
+        y++;
     }
+}
 
+int try_insert(char ***field, t_list *tetrimin, t_point *check)
+{
+    int i;
+    t_point *start;
+
+    start = (t_point *)malloc(sizeof(t_point));
+    if (start == NULL)
+        return (0);
+    start->x = check->x;
+    start->y = check->y;
+    i = 0;
+    while (i < 4)
+    {
+        check->y = start->y + ((t_figure *)tetrimin->content)->y[i] - ((t_figure *)tetrimin->content)->y[0];
+        check->x = start->x + ((t_figure *)tetrimin->content)->x[i] - ((t_figure *)tetrimin->content)->x[0];
+        if (check->y < 0 || check->x < 0)
+            return (0);
+        if ((*field)[check->y][check->x] != '.')
+            return (0);
+        (*field)[check->y][check->x] = ((char)tetrimin->content_size);
+        i++;
+    }
+    return (1);
+}
+
+void get_next_point(char **field, t_point **previous)
+{
+    if (field[(*previous)->x + 1] == '\0')
+    {
+        (*previous)->x = 0;
+        if (field[(*previous)->y + 1] == NULL)
+            *previous = NULL;
+        (*previous)->y = (*previous)->y + 1;
+    }
+    else
+        (*previous)->x = (*previous)->x + 1;
+}
+
+int find_position(char ***field, t_list *tetremin, t_point **point)//возвращает следующую точку после той куда смогли поставить
+{
+    clear_previous_position((char)tetremin->content_size, *field);
+    while ((*field)[(*point)->y] != NULL)
+    {
+        while ((*field)[(*point)->y][(*point)->x])
+        {
+            if (try_insert(field, tetremin, *point))
+            {
+                get_next_point(*field, point);
+                return (1);
+            }
+            clear_previous_position((char)tetremin->content_size, *field);
+            (*point)->x++;
+        }
+        (*point)->x = 0;
+        (*point)->y++;
+    }
+    *point = NULL;
     return (0);
 }
 
@@ -39,7 +107,7 @@ int initialize_field(char ***field)
         if ((*field)[i] == NULL)
             return (0);
         j = 0;
-        while (j < 3)
+        while (j < 2)
         {
             (*field)[i][j] = '.';
             j++;
@@ -51,18 +119,21 @@ int initialize_field(char ***field)
 
 void free_field(char **field)
 {
+    char *to_free;
+
     while (*field)
     {
-        free(*field);
+        to_free = *field;
         field++;
+        free(to_free);
     }
-    free(field);
+    free(*field);
 }
 
 int rebuild_field(char ***field)
 {
-    size_t i;
-    size_t j;
+    int i;
+    int j;
 
     i = 0;
     while ((*field)[i])
@@ -98,14 +169,14 @@ int solve(t_list **args, char ***field, t_point *point)
     result = 0;
     while (result == 0)
     {
-        point = find_position(*field, *args, point);
+        find_position(field, *args, &point);
         if (point == NULL)
         {
-            if (rebuild_field(field))
-                return (solve(args, field, start_point()));
-            return -1;
+            if (!rebuild_field(field))
+                return (-1);
+            return (solve(args, field, start_point()));
         }
-        result = solve(args, field, point);
+        result = solve((*args)->next, field, point);
     }
     if (result == 1)
         return (1);
@@ -153,10 +224,11 @@ void add_coordinates(int x, int y, t_figure *figure)
     i = 0;
     while (i < 4)
     {
-        if (figure->x[i] != -1)
+        if (figure->x[i] == -1)
         {
             figure->x[i] = x;
             figure->y[i] = y;
+            break;
         }
         i++;
     }
@@ -214,7 +286,7 @@ int add_figure(char *buf, t_list **args)
     if (*args == NULL)
     {
         *args = create_figure(buf);
-        if ((*args)->next == NULL)
+        if (*args == NULL)
             return (0);
         (*args)->content_size = 'A';
         return (1);
@@ -279,7 +351,7 @@ int read_input(char *file_path, t_list **args)
     while (1)
     {
         rd = read(fd, buf, BUFF_SIZE);
-        if (rd == 0 && (*args)->content_size == 0)
+        if (rd == 0 && (*args)->content_size != 0)
         {
             free(buf);
             return (1);
@@ -300,34 +372,35 @@ void print_result(char **field)
     while (field[i])
     {
         ft_putstr(field[i]);
+        ft_putchar('\n');
         i++;
     }
 }
 
 int main(int argc, char **argv)
 {
-    t_list **args;
+    t_list *args;
     char **field;
 
-    args = (t_list **)malloc(sizeof(t_list *));
-    if (args == NULL)
-        return (put_error(NULL, NULL, 0));
-    if (argc == 2)
+    //args = (t_list *)malloc(sizeof(t_list));
+    //if (args == NULL)
+     //   return (put_error(NULL, NULL, 0));
+    //if (argc == 2)
     {
-        if (read_input(argv[1], args))
+        if (read_input("/Users/bold-hen/MyGit/Fillit/tests/test_3.txt", &args))
         {
             if (initialize_field(&field) == 0)
-                return (put_error(args, NULL, 0));
-            if (solve(args, &field, start_point()))
+                return (put_error(&args, NULL, 0));
+            if (solve(&args, &field, start_point()))
                 print_result(field);
             else
             {
                 free_field(field);
-                return (put_error(args, NULL, 0));
+                return (put_error(&args, NULL, 0));
             }
         }
         return (0);
     }
-    else
-        return (put_error(NULL, NULL, 0));
+    //else
+        //return (put_error(NULL, NULL, 0));
 }

@@ -88,7 +88,22 @@
 		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_bzero.c">
 			<Option target="Fillit"/>
 		</Unit>
+		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_lstdel.c">
+			<Option target="Fillit"/>
+		</Unit>
+		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_lstdelone.c">
+			<Option target="Fillit"/>
+		</Unit>
+		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_lstnew.c">
+			<Option target="Fillit"/>
+		</Unit>
+		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_memcpy.c">
+			<Option target="Fillit"/>
+		</Unit>
 		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_memmove.c">
+			<Option target="Fillit"/>
+		</Unit>
+		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_putchar.c">
 			<Option target="Fillit"/>
 		</Unit>
 		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_putchar_fd.c">
@@ -100,7 +115,13 @@
 		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_putstr_fd.c">
 			<Option target="Fillit"/>
 		</Unit>
+		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_strlen.c">
+			<Option target="Fillit"/>
+		</Unit>
 		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_strnew.c">
+			<Option target="Fillit"/>
+		</Unit>
+		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_strsplit.c">
 			<Option target="Fillit"/>
 		</Unit>
 		<Unit filename="/Users/bold-hen/MyGit/Fillit/main.c">

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/bold-hen/MyGit/Fillit/libft/ft_putchar.c
+includes/libft.h
+/Users/bold-hen/MyGit/Fillit/libft/includes/libft.h
+
+/Users/bold-hen/MyGit/Fillit/libft/includes/libft.h
+string.h
+-
+stdlib.h
+-
+fcntl.h
+-
+unistd.h
+-
+
