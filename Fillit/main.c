@@ -131,33 +131,57 @@ void free_field(char **field)
     free(*field);
 }
 
+char *strrealloc(char *str, size_t size)
+{
+    char *result;
+
+    result = ft_strnew(size);
+    if (result == NULL)
+        return (NULL);
+    result = ft_strcat(result, str);
+    free(str);
+    return (result);
+}
+
+int copy_field(char ***field, char ***dst, int length)
+{
+    int count;
+
+    count = 0;
+    while (count < length - 2)
+    {
+        (*dst)[count] = ft_strnew((size_t)length);
+        if ((*dst)[count] == NULL)
+            return (0);
+        (*dst)[count] = ft_strcat((*dst)[count], (*field)[count]);
+        (*dst)[count][length - 2] = '.';
+        count++;
+    }
+    (*dst)[count] = ft_strnew((size_t)length);
+    while (length >= 2)
+    {
+        (*dst)[count][length - 2] = '.';
+        length--;
+    }
+    return (1);
+}
+
 int rebuild_field(char ***field)
 {
     int i;
-    int j;
+    char **result;
 
     i = 0;
-    while ((*field)[i])
+    while ((*field)[i] != NULL)
         i++;
-    j = i;
-    free_field(*field);
-    *field = (char **)malloc(sizeof(char *) * (i + 2));
-    if (*field == NULL)
+    result = (char **)malloc(sizeof(char *) * (i + 2));
+    if (result == NULL)
         return (0);
-    (*field)[i + 1] = NULL;
-    while (i >= 0)
-    {
-        (*field)[i] = ft_strnew(i + 2);
-        if ((*field)[i] == NULL)
-            return (0);
-        while (j >= 0)
-        {
-            (*field)[i][j] = '.';
-            j--;
-        }
-        j = ft_strlen((*field)[i]) - 1;
-        i--;
-    }
+    result[i + 1] = NULL;
+    if (!copy_field(field, &result, i + 2))
+        return (0);
+    free_field(*field);
+    *field = result;
     return (1);
 }
 

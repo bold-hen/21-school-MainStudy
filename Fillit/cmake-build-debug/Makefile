@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000w0c000703/T/AppTranslocation/09217819-E8DA-4D2A-A5B7-878CAA784A7C/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000w0c000703/T/AppTranslocation/88868B4A-5724-431E-B660-EFA7730E2F9D/d/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000w0c000703/T/AppTranslocation/09217819-E8DA-4D2A-A5B7-878CAA784A7C/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000w0c000703/T/AppTranslocation/88868B4A-5724-431E-B660-EFA7730E2F9D/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/bold-hen/MyGit/Fillit/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000w0c000703/T/AppTranslocation/09217819-E8DA-4D2A-A5B7-878CAA784A7C/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000w0c000703/T/AppTranslocation/88868B4A-5724-431E-B660-EFA7730E2F9D/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000w0c000703/T/AppTranslocation/09217819-E8DA-4D2A-A5B7-878CAA784A7C/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000w0c000703/T/AppTranslocation/88868B4A-5724-431E-B660-EFA7730E2F9D/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -393,6 +393,33 @@ libft/ft_putstr_fd.c.s:
 	$(MAKE) -f CMakeFiles/Fillit.dir/build.make CMakeFiles/Fillit.dir/libft/ft_putstr_fd.c.s
 .PHONY : libft/ft_putstr_fd.c.s
 
+libft/ft_strcat.o: libft/ft_strcat.c.o
+
+.PHONY : libft/ft_strcat.o
+
+# target to build an object file
+libft/ft_strcat.c.o:
+	$(MAKE) -f CMakeFiles/Fillit.dir/build.make CMakeFiles/Fillit.dir/libft/ft_strcat.c.o
+.PHONY : libft/ft_strcat.c.o
+
+libft/ft_strcat.i: libft/ft_strcat.c.i
+
+.PHONY : libft/ft_strcat.i
+
+# target to preprocess a source file
+libft/ft_strcat.c.i:
+	$(MAKE) -f CMakeFiles/Fillit.dir/build.make CMakeFiles/Fillit.dir/libft/ft_strcat.c.i
+.PHONY : libft/ft_strcat.c.i
+
+libft/ft_strcat.s: libft/ft_strcat.c.s
+
+.PHONY : libft/ft_strcat.s
+
+# target to generate assembly for a file
+libft/ft_strcat.c.s:
+	$(MAKE) -f CMakeFiles/Fillit.dir/build.make CMakeFiles/Fillit.dir/libft/ft_strcat.c.s
+.PHONY : libft/ft_strcat.c.s
+
 libft/ft_strlen.o: libft/ft_strlen.c.o
 
 .PHONY : libft/ft_strlen.o
@@ -540,6 +567,9 @@ help:
 	@echo "... libft/ft_putstr_fd.o"
 	@echo "... libft/ft_putstr_fd.i"
 	@echo "... libft/ft_putstr_fd.s"
+	@echo "... libft/ft_strcat.o"
+	@echo "... libft/ft_strcat.i"
+	@echo "... libft/ft_strcat.s"
 	@echo "... libft/ft_strlen.o"
 	@echo "... libft/ft_strlen.i"
 	@echo "... libft/ft_strlen.s"

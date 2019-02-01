@@ -31,6 +31,9 @@ CMakeFiles/Fillit.dir/libft/ft_putstr.c.o
 CMakeFiles/Fillit.dir/libft/ft_putstr_fd.c.o
  /Users/bold-hen/MyGit/Fillit/libft/./includes/libft.h
  /Users/bold-hen/MyGit/Fillit/libft/ft_putstr_fd.c
+CMakeFiles/Fillit.dir/libft/ft_strcat.c.o
+ /Users/bold-hen/MyGit/Fillit/libft/ft_strcat.c
+ /Users/bold-hen/MyGit/Fillit/libft/includes/libft.h
 CMakeFiles/Fillit.dir/libft/ft_strlen.c.o
  /Users/bold-hen/MyGit/Fillit/libft/ft_strlen.c
  /Users/bold-hen/MyGit/Fillit/libft/includes/libft.h

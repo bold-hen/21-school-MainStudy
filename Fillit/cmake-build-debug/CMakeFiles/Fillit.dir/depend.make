@@ -31,6 +31,9 @@ CMakeFiles/Fillit.dir/libft/ft_putstr.c.o: ../libft/ft_putstr.c
 CMakeFiles/Fillit.dir/libft/ft_putstr_fd.c.o: ../libft/./includes/libft.h
 CMakeFiles/Fillit.dir/libft/ft_putstr_fd.c.o: ../libft/ft_putstr_fd.c
 
+CMakeFiles/Fillit.dir/libft/ft_strcat.c.o: ../libft/ft_strcat.c
+CMakeFiles/Fillit.dir/libft/ft_strcat.c.o: ../libft/includes/libft.h
+
 CMakeFiles/Fillit.dir/libft/ft_strlen.c.o: ../libft/ft_strlen.c
 CMakeFiles/Fillit.dir/libft/ft_strlen.c.o: ../libft/includes/libft.h
 

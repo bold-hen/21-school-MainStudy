@@ -115,6 +115,9 @@
 		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_putstr_fd.c">
 			<Option target="Fillit"/>
 		</Unit>
+		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_strcat.c">
+			<Option target="Fillit"/>
+		</Unit>
 		<Unit filename="/Users/bold-hen/MyGit/Fillit/libft/ft_strlen.c">
 			<Option target="Fillit"/>
 		</Unit>
