@@ -5,4 +5,16 @@
 
 # define BUFF_SIZE 21
 
+typedef struct  s_figure
+{
+    int x[4];
+    int y[4];
+}       t_figure;
+
+typedef struct  s_point
+{
+    int x;
+    int y;
+}       t_point;
+
 #endif
