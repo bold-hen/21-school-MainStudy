@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Fillit.dir/libft/ft_memcpy.c.o"
   "CMakeFiles/Fillit.dir/libft/ft_putchar.c.o"
   "CMakeFiles/Fillit.dir/libft/ft_strcat.c.o"
+  "CMakeFiles/Fillit.dir/libft/ft_memset.c.o"
   "Fillit.pdb"
   "Fillit"
 )
