@@ -133,42 +133,21 @@ void free_field(char ***field)
         (*field)++;
         free(to_free);
     }
-    //free(*field);
 }
 
-/*char *strrealloc(char *str, size_t size)
-{
-    char *result;
-
-    result = ft_strnew(size);
-    if (result == NULL)
-        return (NULL);
-    result = ft_strcat(result, str);
-    free(str);
-    return (result);
-}*/
-
-int copy_field(char ***field, char ***dst, int length)
+int copy_field(char ***dst, int length)
 {
     int count;
 
     count = 0;
-    while (/*count < length - 2*/count < length - 1)
+    while (count < length - 1)
     {
         (*dst)[count] = ft_strnew((size_t)length);
         if ((*dst)[count] == NULL)
             return (0);
         ft_memset((*dst)[count], '.', (size_t)(length - 1));
-        //(*dst)[count] = ft_strcat((*dst)[count], (*field)[count]);
-        //(*dst)[count][length - 2] = '.';
         count++;
     }
-    /*(*dst)[count] = ft_strnew((size_t)length);
-    while (length >= 2)
-    {
-        (*dst)[count][length - 2] = '.';
-        length--;
-    }*/
     return (1);
 }
 
@@ -184,7 +163,7 @@ int rebuild_field(char ***field)
     if (result == NULL)
         return (0);
     result[i + 1] = NULL;
-    if (!copy_field(field, &result, i + 2))
+    if (!copy_field(&result, i + 2))
         return (0);
     free_field(field);
     *field = result;
@@ -425,9 +404,9 @@ int main(int argc, char **argv)
     args = ft_lstnew(NULL, 0);
     if (args == NULL)
         return (put_error(NULL, NULL, 0));
-    //if (argc == 2)
+    if (argc == 2)
     {
-        if (read_input("../tests/test_5.txt", &args))
+        if (read_input("../tests/test_7.txt", &args))
         {
             if (initialize_field(&field) == 0)
                 return (put_error(&args, NULL, 0));
@@ -441,6 +420,6 @@ int main(int argc, char **argv)
         }
         return (0);
     }
-    //else
-        //return (put_error(NULL, NULL, 0));
+    else
+        return (put_error(NULL, NULL, 0));
 }

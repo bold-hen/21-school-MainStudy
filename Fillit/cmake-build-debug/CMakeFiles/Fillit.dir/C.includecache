@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/bold-hen/Desktop/21-school/MainStudyProjects/Fillit/./libft/includes/libft.h
+/Users/bold-hen/MyGit/Fillit/./libft/includes/libft.h
 string.h
 -
 stdlib.h
@@ -16,11 +16,11 @@ fcntl.h
 unistd.h
 -
 
-/Users/bold-hen/Desktop/21-school/MainStudyProjects/Fillit/Fillit.h
+/Users/bold-hen/MyGit/Fillit/Fillit.h
 ./libft/includes/libft.h
-/Users/bold-hen/Desktop/21-school/MainStudyProjects/Fillit/./libft/includes/libft.h
+/Users/bold-hen/MyGit/Fillit/./libft/includes/libft.h
 
-/Users/bold-hen/Desktop/21-school/MainStudyProjects/Fillit/main.c
+/Users/bold-hen/MyGit/Fillit/main.c
 Fillit.h
-/Users/bold-hen/Desktop/21-school/MainStudyProjects/Fillit/Fillit.h
+/Users/bold-hen/MyGit/Fillit/Fillit.h
 
