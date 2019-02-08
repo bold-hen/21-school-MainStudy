@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_init.c
+mlx_int.h
+/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_int.h
+
+/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_int.h
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+unistd.h
+-
+fcntl.h
+-
+sys/mman.h
+-
+X11/Xlib.h
+-
+X11/Xutil.h
+-
+sys/ipc.h
+-
+sys/shm.h
+-
+X11/extensions/XShm.h
+-
+
+/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_loop.c
+mlx_int.h
+/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_int.h
+
+/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_new_window.c
+mlx_int.h
+/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_int.h
+

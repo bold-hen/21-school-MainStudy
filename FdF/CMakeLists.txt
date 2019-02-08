@@ -3,4 +3,5 @@ project(FdF C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(FdF main.c FdF.h)
+add_executable(FdF main.c FdF.h minilibx_macos/mlx.h)
+add_library(minilibx_macos/libmlx.a)

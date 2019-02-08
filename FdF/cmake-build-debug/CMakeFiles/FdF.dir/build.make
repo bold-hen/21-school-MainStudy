@@ -70,17 +70,62 @@ CMakeFiles/FdF.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/main.c -o CMakeFiles/FdF.dir/main.c.s
 
+CMakeFiles/FdF.dir/minilibx/mlx_init.c.o: CMakeFiles/FdF.dir/flags.make
+CMakeFiles/FdF.dir/minilibx/mlx_init.c.o: ../minilibx/mlx_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/FdF.dir/minilibx/mlx_init.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/minilibx/mlx_init.c.o   -c /Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_init.c
+
+CMakeFiles/FdF.dir/minilibx/mlx_init.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/minilibx/mlx_init.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_init.c > CMakeFiles/FdF.dir/minilibx/mlx_init.c.i
+
+CMakeFiles/FdF.dir/minilibx/mlx_init.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/minilibx/mlx_init.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_init.c -o CMakeFiles/FdF.dir/minilibx/mlx_init.c.s
+
+CMakeFiles/FdF.dir/minilibx/mlx_loop.c.o: CMakeFiles/FdF.dir/flags.make
+CMakeFiles/FdF.dir/minilibx/mlx_loop.c.o: ../minilibx/mlx_loop.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/FdF.dir/minilibx/mlx_loop.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/minilibx/mlx_loop.c.o   -c /Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_loop.c
+
+CMakeFiles/FdF.dir/minilibx/mlx_loop.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/minilibx/mlx_loop.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_loop.c > CMakeFiles/FdF.dir/minilibx/mlx_loop.c.i
+
+CMakeFiles/FdF.dir/minilibx/mlx_loop.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/minilibx/mlx_loop.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_loop.c -o CMakeFiles/FdF.dir/minilibx/mlx_loop.c.s
+
+CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.o: CMakeFiles/FdF.dir/flags.make
+CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.o: ../minilibx/mlx_new_window.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.o   -c /Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_new_window.c
+
+CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_new_window.c > CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.i
+
+CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_new_window.c -o CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.s
+
 # Object files for target FdF
 FdF_OBJECTS = \
-"CMakeFiles/FdF.dir/main.c.o"
+"CMakeFiles/FdF.dir/main.c.o" \
+"CMakeFiles/FdF.dir/minilibx/mlx_init.c.o" \
+"CMakeFiles/FdF.dir/minilibx/mlx_loop.c.o" \
+"CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.o"
 
 # External object files for target FdF
 FdF_EXTERNAL_OBJECTS =
 
 FdF: CMakeFiles/FdF.dir/main.c.o
+FdF: CMakeFiles/FdF.dir/minilibx/mlx_init.c.o
+FdF: CMakeFiles/FdF.dir/minilibx/mlx_loop.c.o
+FdF: CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.o
 FdF: CMakeFiles/FdF.dir/build.make
 FdF: CMakeFiles/FdF.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable FdF"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable FdF"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FdF.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

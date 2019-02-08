@@ -5,6 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/main.c" "/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/main.c.o"
+  "/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_init.c" "/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/minilibx/mlx_init.c.o"
+  "/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_loop.c" "/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/minilibx/mlx_loop.c.o"
+  "/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_new_window.c" "/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/cmake-build-debug/CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

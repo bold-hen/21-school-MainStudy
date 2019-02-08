@@ -78,10 +78,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/Fdf.h">
+		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/FdF.h">
 			<Option target="FdF"/>
 		</Unit>
 		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/main.c">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_init.c">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_loop.c">
+			<Option target="FdF"/>
+		</Unit>
+		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_new_window.c">
 			<Option target="FdF"/>
 		</Unit>
 		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/CMakeLists.txt">
