@@ -35,6 +35,10 @@ int deal_key(int key, void *draw)
         g_x -= 4;
         //left
     }
+    if (key == 53)
+    {
+        exit(0);
+    }
     mlx_clear_window(((t_draw *)draw)->mlx_ptr, ((t_draw *)draw)->win_ptr);
     mlx_pixel_put(((t_draw *)draw)->mlx_ptr, ((t_draw *)draw)->win_ptr, g_x, g_y, 0xFFFFFF);
     return (0);

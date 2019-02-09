@@ -1,12 +1,17 @@
 #include "Fillit.h"
 
-t_point *start_point()
+t_point *start_point(t_point *point)
 {
     t_point *result;
 
-    result = (t_point *)malloc(sizeof(t_point));
-    if (result == NULL)
-        return (NULL);
+    if (point == NULL)
+    {
+        result = (t_point *)malloc(sizeof(t_point));
+        if (result == NULL)
+            return (NULL);
+    }
+    else
+        result = point;
     result->x = 0;
     result->y = 0;
     return (result);
@@ -170,7 +175,7 @@ int rebuild_field(char ***field)
     return (1);
 }
 
-int solve(t_list *args, char ***field, t_point *point, int can_resize)// переделать...
+int solve(t_list *args, char ***field, t_point *point,int can_resize)// переделать...
 {
     int result;
 
@@ -181,19 +186,15 @@ int solve(t_list *args, char ***field, t_point *point, int can_resize)// пер�
     {
         find_position(field, args, &point);
         if (point != NULL)
-            result = solve(args->next, field, start_point(), 0);
+            result = solve(args->next, field, start_point(NULL),0);
         if (point == NULL && can_resize == 1)
         {
             if (!rebuild_field(field))
                 return (-1);
-            result = 0;
-            point = start_point();
+            point = start_point(point);
         }
         else if (point == NULL)
-        {
-            clear_previous_position((char)args->content_size, *field);
             return (0);
-        }
     }
     return (1);
 }
@@ -406,11 +407,11 @@ int main(int argc, char **argv)
         return (put_error(NULL, NULL, 0));
     if (argc == 2)
     {
-        if (read_input("../tests/test_7.txt", &args))
+        if (read_input(argv[1], &args))
         {
             if (initialize_field(&field) == 0)
                 return (put_error(&args, NULL, 0));
-            if (solve(args, &field, start_point(), 1))
+            if (solve(args, &field, start_point(NULL), 1))
                 print_result(field);
             else
             {
