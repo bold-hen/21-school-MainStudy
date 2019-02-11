@@ -36,14 +36,10 @@ void clear_previous_position(char tetrimin, char **field)
     }
 }
 
-int try_insert(char ***field, t_list *tetrimin, t_point *start)
+int try_insert(char ***field, t_list *tetrimin, t_point *start, t_point *check)
 {
     int i;
-    t_point *check;
 
-    check = (t_point *)malloc(sizeof(t_point));
-    if (start == NULL)
-        return (0);
     check->x = start->x;
     check->y = start->y;
     i = 0;
@@ -82,7 +78,7 @@ int find_position(char ***field, t_list *tetremin, t_point **point)
     {
         while ((*field)[(*point)->y][(*point)->x])
         {
-            if (try_insert(field, tetremin, *point))
+            if (try_insert(field, tetremin, *point, start_point(NULL)))
             {
                 get_next_point(*field, point);
                 return (1);
@@ -102,6 +98,18 @@ int find_position(char ***field, t_list *tetremin, t_point **point)
     return (0);
 }
 
+void free_field(char ***field)
+{
+    char *to_free;
+
+    while (**field != NULL)
+    {
+        to_free = **field;
+        (*field)++;
+        free(to_free);
+    }
+}
+
 int initialize_field(char ***field)
 {
     int i;
@@ -116,7 +124,10 @@ int initialize_field(char ***field)
     {
         (*field)[i] = ft_strnew(3);
         if ((*field)[i] == NULL)
+        {
+            free_field(field);
             return (0);
+        }
         j = 0;
         while (j < 2)
         {
@@ -126,18 +137,6 @@ int initialize_field(char ***field)
         i++;
     }
     return (1);
-}
-
-void free_field(char ***field)
-{
-    char *to_free;
-
-    while (**field != NULL)
-    {
-        to_free = **field;
-        (*field)++;
-        free(to_free);
-    }
 }
 
 int copy_field(char ***dst, int length)
@@ -269,7 +268,7 @@ int add_point(t_list *figure, int x, int y, char check)
     return (1);
 }
 
-t_list *create_figure(char *buf)
+t_list *create_figure(char *buf)// непонятно где утечка
 {
     t_list *figure;
     char **map;
@@ -287,11 +286,17 @@ t_list *create_figure(char *buf)
         while (map[y][x])
         {
             if (!add_point(figure, x, y, map[y][x]))
+            {
+                free_field(&map);
+                //free(map);
+                ft_lstdelone(&figure, NULL);
                 return (0);
+            }
             x++;
         }
         y++;
     }
+    //free(map);
     free_field(&map);
     return (figure);
 }
@@ -344,13 +349,15 @@ int validate_input(char *buf, t_list **args)
     return (0);
 }
 
-int put_error(t_list **args_free, char *to_free, int to_close)
+int put_error(t_list **args_free, char **field, char *to_free, int to_close)
 {
     ft_putstr("error\n");
     if (args_free != NULL)
         ft_lstdel(args_free, NULL);
     if (to_free != NULL)
         free(to_free);
+    if (field != NULL)
+        free_field(&field);
     if (to_close != 0)
         close(to_close);
     return (0);
@@ -364,10 +371,10 @@ int read_input(char *file_path, t_list **args)
 
     buf = ft_strnew(BUFF_SIZE + 1);
     if (buf == NULL)
-        return (put_error(NULL, NULL, 0));
+        return (put_error(NULL, NULL, NULL, 0));
     fd = open(file_path, O_RDONLY);
     if (fd == -1)
-        return (put_error(NULL, buf, 0));
+        return (put_error(NULL, NULL, buf, 0));
     while (1)
     {
         rd = read(fd, buf, BUFF_SIZE);
@@ -377,10 +384,10 @@ int read_input(char *file_path, t_list **args)
             return (1);
         }
         if (rd < 20)
-            return (put_error(args, buf, fd));
+            return (put_error(args, NULL, buf, fd));
         buf[rd] = '\0';
         if (!validate_input(buf, args))
-            return (put_error(args, buf, fd));
+            return (put_error(args, NULL, buf, fd));
     }
 }
 
@@ -404,23 +411,20 @@ int main(int argc, char **argv)
 
     args = ft_lstnew(NULL, 0);
     if (args == NULL)
-        return (put_error(NULL, NULL, 0));
+        return (put_error(NULL, NULL, NULL, 0));
     if (argc == 2)
     {
         if (read_input(argv[1], &args))
         {
             if (initialize_field(&field) == 0)
-                return (put_error(&args, NULL, 0));
+                return (put_error(&args, NULL, NULL, 0));
             if (solve(args, &field, start_point(NULL), 1))
                 print_result(field);
             else
-            {
-                free_field(&field);
-                return (put_error(&args, NULL, 0));
-            }
+                return (put_error(&args, field, NULL, 0));
         }
         return (0);
     }
     else
-        return (put_error(NULL, NULL, 0));
+        return (put_error(NULL, NULL, NULL, 0));
 }
