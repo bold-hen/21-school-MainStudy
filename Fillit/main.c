@@ -36,7 +36,7 @@ void clear_previous_position(char tetrimin, char **field)
     }
 }
 
-int try_insert(char ***field, t_list *tetrimin, t_point *start, t_point *check)
+int try_insert(char ***field, t_list *tetrimin, t_point *start, t_point *check)//почему гит не хочет сохранять
 {
     int i;
 
