@@ -11,9 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fe1f2a0-3d35-40c4-93d4-13affa653380" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-    </list>
+    <list default="true" id="7fe1f2a0-3d35-40c4-93d4-13affa653380" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +70,7 @@
     <session id="1427702281">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="2" />
@@ -206,7 +204,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="764" />
     <option name="y" value="23" />
     <option name="width" value="676" />
@@ -299,7 +297,7 @@
       <workItem from="1549708985080" duration="2213000" />
       <workItem from="1549868597410" duration="1949000" />
       <workItem from="1549901518662" duration="43000" />
-      <workItem from="1549901762337" duration="20000" />
+      <workItem from="1549901762337" duration="83000" />
     </task>
     <task id="LOCAL-00001" summary="Начальный пуш проекта Fillit, для работы с разных рабочих мест">
       <created>1548489548446</created>
@@ -326,7 +324,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55070000" />
+    <option name="totallyTimeSpent" value="55133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="764" y="23" width="676" height="800" extended-state="0" />

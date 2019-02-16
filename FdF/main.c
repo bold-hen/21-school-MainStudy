@@ -13,6 +13,18 @@ typedef struct s_draw
     void *win_ptr;
 } t_draw;
 
+typedef struct  s_point
+{
+    int         x;
+    int         y;
+}               t_point;
+
+typedef struct  s_line
+{
+    t_point     *begin;
+    t_point     *end;
+}               t_line;
+
 int deal_key(int key, void *draw)
 {
     if (key == 124)
@@ -44,6 +56,19 @@ int deal_key(int key, void *draw)
     return (0);
 }
 
+void draw_line_2D(t_draw *graphic, t_line *line, int color)
+{
+    t_point *to_draw;
+
+    to_draw = line->begin;
+    while (to_draw != line->end)
+    {
+        mlx_pixel_put(graphic->mlx_ptr, graphic->win_ptr, to_draw->x, to_draw->y, color);
+        to_draw->x += 1;
+        to_draw->y = ((to_draw->x - line->begin->x) / ()) * (line->end->y - line->begin->y) + line->begin->y
+    }
+}
+
 int main(int argc, char **argv)
 {
     void *win_ptr;
@@ -58,5 +83,6 @@ int main(int argc, char **argv)
     draw->win_ptr = win_ptr;
     mlx_key_hook(win_ptr, deal_key, draw);
     mlx_loop(mlx_ptr);
+
     return 0;
 }

@@ -1,1 +1,5 @@
 gcc -I minilibx_macos/  main.c -L minilibx_macos -lmlx -framework OpenGL -framework AppKit
+
+1) Необходимо поработать над реализацией рисования примитивов (линия, прямоугольник)
+2) Создать необходимые структуры для работы с графикой
+3) Переписать библиотеку GDI+ через MLX
