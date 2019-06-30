@@ -150,87 +150,6 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/main.c.s
 .PHONY : main.c.s
 
-minilibx/mlx_init.o: minilibx/mlx_init.c.o
-
-.PHONY : minilibx/mlx_init.o
-
-# target to build an object file
-minilibx/mlx_init.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/minilibx/mlx_init.c.o
-.PHONY : minilibx/mlx_init.c.o
-
-minilibx/mlx_init.i: minilibx/mlx_init.c.i
-
-.PHONY : minilibx/mlx_init.i
-
-# target to preprocess a source file
-minilibx/mlx_init.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/minilibx/mlx_init.c.i
-.PHONY : minilibx/mlx_init.c.i
-
-minilibx/mlx_init.s: minilibx/mlx_init.c.s
-
-.PHONY : minilibx/mlx_init.s
-
-# target to generate assembly for a file
-minilibx/mlx_init.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/minilibx/mlx_init.c.s
-.PHONY : minilibx/mlx_init.c.s
-
-minilibx/mlx_loop.o: minilibx/mlx_loop.c.o
-
-.PHONY : minilibx/mlx_loop.o
-
-# target to build an object file
-minilibx/mlx_loop.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/minilibx/mlx_loop.c.o
-.PHONY : minilibx/mlx_loop.c.o
-
-minilibx/mlx_loop.i: minilibx/mlx_loop.c.i
-
-.PHONY : minilibx/mlx_loop.i
-
-# target to preprocess a source file
-minilibx/mlx_loop.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/minilibx/mlx_loop.c.i
-.PHONY : minilibx/mlx_loop.c.i
-
-minilibx/mlx_loop.s: minilibx/mlx_loop.c.s
-
-.PHONY : minilibx/mlx_loop.s
-
-# target to generate assembly for a file
-minilibx/mlx_loop.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/minilibx/mlx_loop.c.s
-.PHONY : minilibx/mlx_loop.c.s
-
-minilibx/mlx_new_window.o: minilibx/mlx_new_window.c.o
-
-.PHONY : minilibx/mlx_new_window.o
-
-# target to build an object file
-minilibx/mlx_new_window.c.o:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.o
-.PHONY : minilibx/mlx_new_window.c.o
-
-minilibx/mlx_new_window.i: minilibx/mlx_new_window.c.i
-
-.PHONY : minilibx/mlx_new_window.i
-
-# target to preprocess a source file
-minilibx/mlx_new_window.c.i:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.i
-.PHONY : minilibx/mlx_new_window.c.i
-
-minilibx/mlx_new_window.s: minilibx/mlx_new_window.c.s
-
-.PHONY : minilibx/mlx_new_window.s
-
-# target to generate assembly for a file
-minilibx/mlx_new_window.c.s:
-	$(MAKE) -f CMakeFiles/FdF.dir/build.make CMakeFiles/FdF.dir/minilibx/mlx_new_window.c.s
-.PHONY : minilibx/mlx_new_window.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -243,15 +162,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... minilibx/mlx_init.o"
-	@echo "... minilibx/mlx_init.i"
-	@echo "... minilibx/mlx_init.s"
-	@echo "... minilibx/mlx_loop.o"
-	@echo "... minilibx/mlx_loop.i"
-	@echo "... minilibx/mlx_loop.s"
-	@echo "... minilibx/mlx_new_window.o"
-	@echo "... minilibx/mlx_new_window.i"
-	@echo "... minilibx/mlx_new_window.s"
 .PHONY : help
 
 

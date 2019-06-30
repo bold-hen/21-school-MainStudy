@@ -45,7 +45,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
@@ -65,7 +65,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
@@ -84,13 +84,7 @@
 		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/main.c">
 			<Option target="FdF"/>
 		</Unit>
-		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_init.c">
-			<Option target="FdF"/>
-		</Unit>
-		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_loop.c">
-			<Option target="FdF"/>
-		</Unit>
-		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx/mlx_new_window.c">
+		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/minilibx_macos/mlx.h">
 			<Option target="FdF"/>
 		</Unit>
 		<Unit filename="/Users/bold-hen/Desktop/21-school/MainStudyProjects/FdF/CMakeLists.txt">
